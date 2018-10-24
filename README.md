@@ -1,2 +1,0 @@
-# bst273finalproject
-BST273_Final_Project_For_Xiaohui_Yu
