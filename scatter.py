@@ -15,7 +15,7 @@ import seaborn as sns
 
 
 """
-Step #1: set up command-line interface 
+Step #1: set up command-line interface
 """
 
 description = """
@@ -46,7 +46,7 @@ parser.add_argument(
 )
 
 parser.add_argument(
-    "-cat",
+    "-cat", # by convention, command line options with a single - are one letter
     "--category",
     type=int,
     default=None,
@@ -54,7 +54,7 @@ parser.add_argument(
 )
 
 parser.add_argument(
-    "-output",
+    "-output", # same comment as above
     "--output",
     default=None,
     help="Path to the output file (optional: if not specified, save the plot with a reasonable default name in the working directory).",
@@ -90,7 +90,7 @@ ystring=yoverall[1:]
 y = []
 for yitem in ystring:
     y.append(float(yitem))
-    
+
 
 """
 Step #3: create an optional stratified plot by category
@@ -123,11 +123,10 @@ plt.title("A Scatter Plot of " + figtitle)
 
 
 """
-Step #5: save scatter plot to optional or default output path 
+Step #5: save scatter plot to optional or default output path
 """
 
 if args.output is not None:
     plt.savefig(args.output)
 else:
-    plt.savefig("scatter_plot.png")
-
+    plt.savefig("scatter_plot.png") # you could have put this in as the default for the --output arg instead
